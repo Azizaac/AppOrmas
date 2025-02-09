@@ -1,6 +1,4 @@
 ﻿Imports System.Data.SqlClient
-Imports NamaNamespace.ModuleApp
-
 
 Public Class FormLogin
     Private Sub FormLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load

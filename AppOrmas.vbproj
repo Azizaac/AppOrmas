@@ -73,6 +73,42 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormDashboardAdmin.Designer.vb">
+      <DependentUpon>FormDashboardAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDashboardAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataOrmas.Designer.vb">
+      <DependentUpon>FormDataOrmas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataOrmas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDataUser.Designer.vb">
+      <DependentUpon>FormDataUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKecamatan.Designer.vb">
+      <DependentUpon>FormKecamatan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormKecamatan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKelurahan.Designer.vb">
+      <DependentUpon>FormKelurahan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormKelurahan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLaporan.Designer.vb">
+      <DependentUpon>FormLaporan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormLaporan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormLogin.Designer.vb">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </Compile>
@@ -115,8 +151,29 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormDashboardAdmin.resx">
+      <DependentUpon>FormDashboardAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataOrmas.resx">
+      <DependentUpon>FormDataOrmas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDataUser.resx">
+      <DependentUpon>FormDataUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKecamatan.resx">
+      <DependentUpon>FormKecamatan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKelurahan.resx">
+      <DependentUpon>FormKelurahan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuAdmin.resx">
+      <DependentUpon>FormMenuAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenuOrmas.resx">
+      <DependentUpon>FormMenuOrmas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistrasi.resx">
       <DependentUpon>FormRegistrasi.vb</DependentUpon>
