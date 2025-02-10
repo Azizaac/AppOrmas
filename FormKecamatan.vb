@@ -44,23 +44,54 @@ Public Class FormKecamatan
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-        If lblID.Text = "" Then
-            MsgBox("Pilih data yang akan dihapus!")
+        ' Validasi apakah ada ID yang dipilih
+        If String.IsNullOrEmpty(lblID.Text) Then
+            MsgBox("Pilih data yang akan dihapus!", vbExclamation)
             Exit Sub
         End If
 
+        ' Validasi apakah ID adalah angka
+        Dim idKecamatan As Integer
+        If Not Integer.TryParse(lblID.Text, idKecamatan) Then
+            MsgBox("ID tidak valid!", vbExclamation)
+            Exit Sub
+        End If
+
+        ' Konfirmasi sebelum menghapus
         If MsgBox("Yakin akan menghapus data ini?", vbQuestion + vbYesNo) = vbYes Then
             Try
-                Cmd = New SqlCommand("DELETE FROM kecamatan WHERE id_kecamatan=" & lblID.Text, Conn)
-                Cmd.ExecuteNonQuery()
-                MsgBox("Data berhasil dihapus")
+                ' Cek apakah ada data terkait di tabel kelurahan
+                Dim cekQuery As String = "SELECT COUNT(*) FROM kelurahan WHERE id_kecamatan = @id"
+                Using CekCmd As New SqlCommand(cekQuery, Conn)
+                    CekCmd.Parameters.AddWithValue("@id", idKecamatan)
+                    Dim jumlahTerkait As Integer = Convert.ToInt32(CekCmd.ExecuteScalar())
+
+                    ' Jika masih ada data terkait, batalkan penghapusan
+                    If jumlahTerkait > 0 Then
+                        MsgBox("Tidak bisa menghapus! Data masih digunakan di tabel kelurahan.", vbCritical)
+                        Exit Sub
+                    End If
+                End Using
+
+                ' Jika tidak ada data terkait, lanjut hapus
+                Dim deleteQuery As String = "DELETE FROM kecamatan WHERE id_kecamatan = @id"
+                Using Cmd As New SqlCommand(deleteQuery, Conn)
+                    Cmd.Parameters.AddWithValue("@id", idKecamatan)
+                    Cmd.ExecuteNonQuery()
+                End Using
+
+                MsgBox("Data berhasil dihapus!", vbInformation)
+
+                ' Refresh data dan bersihkan input
                 LoadData()
                 Clear()
-            Catch ex As Exception
-                MsgBox("Terjadi kesalahan: " & ex.Message)
+            Catch ex As SqlException
+                ' Tangani error jika ada foreign key constraint atau lainnya
+                MsgBox("Terjadi kesalahan saat menghapus data: " & ex.Message, vbCritical)
             End Try
         End If
     End Sub
+
 
     Private Sub Clear()
         lblID.Text = ""

@@ -47,14 +47,14 @@ Partial Class FormMenuAdmin
         Me.lblUser = New System.Windows.Forms.Label()
         Me.lblLevel = New System.Windows.Forms.Label()
         Me.btnDashboard = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.lblHeader = New System.Windows.Forms.Label()
         Me.btnKelurahan = New System.Windows.Forms.Button()
         Me.btnKecamatan = New System.Windows.Forms.Button()
         Me.btnOrmas = New System.Windows.Forms.Button()
         Me.btnUser = New System.Windows.Forms.Button()
         Me.btnLaporan = New System.Windows.Forms.Button()
         Me.btnLogout = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lblHeader = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -65,10 +65,16 @@ Partial Class FormMenuAdmin
         Me.Panel1.Controls.Add(Me.lblUser)
         Me.Panel1.Controls.Add(Me.lblLevel)
         Me.Panel1.Controls.Add(Me.btnDashboard)
+        Me.Panel1.Controls.Add(Me.btnKelurahan)
+        Me.Panel1.Controls.Add(Me.btnKecamatan)
+        Me.Panel1.Controls.Add(Me.btnOrmas)
+        Me.Panel1.Controls.Add(Me.btnUser)
+        Me.Panel1.Controls.Add(Me.btnLaporan)
+        Me.Panel1.Controls.Add(Me.btnLogout)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 60)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(250, 419)
+        Me.Panel1.Size = New System.Drawing.Size(250, 446)
         Me.Panel1.TabIndex = 1
         '
         'lblUser
@@ -96,17 +102,86 @@ Partial Class FormMenuAdmin
         'btnDashboard
         '
         Me.btnDashboard.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.btnDashboard.FlatAppearance.BorderSize = 0
         Me.btnDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnDashboard.ForeColor = System.Drawing.Color.White
         Me.btnDashboard.Location = New System.Drawing.Point(10, 100)
         Me.btnDashboard.Name = "btnDashboard"
-        Me.btnDashboard.Padding = New System.Windows.Forms.Padding(20, 0, 0, 0)
         Me.btnDashboard.Size = New System.Drawing.Size(230, 40)
         Me.btnDashboard.TabIndex = 2
         Me.btnDashboard.Text = "Dashboard"
-        Me.btnDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnDashboard.UseVisualStyleBackColor = False
+        '
+        'btnKelurahan
+        '
+        Me.btnKelurahan.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.btnKelurahan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnKelurahan.ForeColor = System.Drawing.Color.White
+        Me.btnKelurahan.Location = New System.Drawing.Point(10, 150)
+        Me.btnKelurahan.Name = "btnKelurahan"
+        Me.btnKelurahan.Size = New System.Drawing.Size(230, 40)
+        Me.btnKelurahan.TabIndex = 3
+        Me.btnKelurahan.Text = "Kelurahan"
+        Me.btnKelurahan.UseVisualStyleBackColor = False
+        '
+        'btnKecamatan
+        '
+        Me.btnKecamatan.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.btnKecamatan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnKecamatan.ForeColor = System.Drawing.Color.White
+        Me.btnKecamatan.Location = New System.Drawing.Point(10, 200)
+        Me.btnKecamatan.Name = "btnKecamatan"
+        Me.btnKecamatan.Size = New System.Drawing.Size(230, 40)
+        Me.btnKecamatan.TabIndex = 4
+        Me.btnKecamatan.Text = "Kecamatan"
+        Me.btnKecamatan.UseVisualStyleBackColor = False
+        '
+        'btnOrmas
+        '
+        Me.btnOrmas.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.btnOrmas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnOrmas.ForeColor = System.Drawing.Color.White
+        Me.btnOrmas.Location = New System.Drawing.Point(10, 250)
+        Me.btnOrmas.Name = "btnOrmas"
+        Me.btnOrmas.Size = New System.Drawing.Size(230, 40)
+        Me.btnOrmas.TabIndex = 5
+        Me.btnOrmas.Text = "Ormas"
+        Me.btnOrmas.UseVisualStyleBackColor = False
+        '
+        'btnUser
+        '
+        Me.btnUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.btnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUser.ForeColor = System.Drawing.Color.White
+        Me.btnUser.Location = New System.Drawing.Point(10, 300)
+        Me.btnUser.Name = "btnUser"
+        Me.btnUser.Size = New System.Drawing.Size(230, 40)
+        Me.btnUser.TabIndex = 6
+        Me.btnUser.Text = "User"
+        Me.btnUser.UseVisualStyleBackColor = False
+        '
+        'btnLaporan
+        '
+        Me.btnLaporan.BackColor = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.btnLaporan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLaporan.ForeColor = System.Drawing.Color.White
+        Me.btnLaporan.Location = New System.Drawing.Point(10, 350)
+        Me.btnLaporan.Name = "btnLaporan"
+        Me.btnLaporan.Size = New System.Drawing.Size(230, 40)
+        Me.btnLaporan.TabIndex = 7
+        Me.btnLaporan.Text = "Laporan"
+        Me.btnLaporan.UseVisualStyleBackColor = False
+        '
+        'btnLogout
+        '
+        Me.btnLogout.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(67, Byte), Integer), CType(CType(53, Byte), Integer))
+        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnLogout.ForeColor = System.Drawing.Color.White
+        Me.btnLogout.Location = New System.Drawing.Point(10, 400)
+        Me.btnLogout.Name = "btnLogout"
+        Me.btnLogout.Size = New System.Drawing.Size(230, 40)
+        Me.btnLogout.TabIndex = 8
+        Me.btnLogout.Text = "Logout"
+        Me.btnLogout.UseVisualStyleBackColor = False
         '
         'Panel2
         '
@@ -123,58 +198,16 @@ Partial Class FormMenuAdmin
         Me.lblHeader.AutoSize = True
         Me.lblHeader.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
         Me.lblHeader.ForeColor = System.Drawing.Color.White
-        Me.lblHeader.Location = New System.Drawing.Point(0, 0)
+        Me.lblHeader.Location = New System.Drawing.Point(20, 15)
         Me.lblHeader.Name = "lblHeader"
         Me.lblHeader.Size = New System.Drawing.Size(386, 29)
         Me.lblHeader.TabIndex = 0
         Me.lblHeader.Text = "SISTEM PENDAFTARAN ORMAS"
         '
-        'btnKelurahan
-        '
-        Me.btnKelurahan.Location = New System.Drawing.Point(0, 0)
-        Me.btnKelurahan.Name = "btnKelurahan"
-        Me.btnKelurahan.Size = New System.Drawing.Size(75, 23)
-        Me.btnKelurahan.TabIndex = 0
-        '
-        'btnKecamatan
-        '
-        Me.btnKecamatan.Location = New System.Drawing.Point(0, 0)
-        Me.btnKecamatan.Name = "btnKecamatan"
-        Me.btnKecamatan.Size = New System.Drawing.Size(75, 23)
-        Me.btnKecamatan.TabIndex = 0
-        '
-        'btnOrmas
-        '
-        Me.btnOrmas.Location = New System.Drawing.Point(0, 0)
-        Me.btnOrmas.Name = "btnOrmas"
-        Me.btnOrmas.Size = New System.Drawing.Size(75, 23)
-        Me.btnOrmas.TabIndex = 0
-        '
-        'btnUser
-        '
-        Me.btnUser.Location = New System.Drawing.Point(0, 0)
-        Me.btnUser.Name = "btnUser"
-        Me.btnUser.Size = New System.Drawing.Size(75, 23)
-        Me.btnUser.TabIndex = 0
-        '
-        'btnLaporan
-        '
-        Me.btnLaporan.Location = New System.Drawing.Point(0, 0)
-        Me.btnLaporan.Name = "btnLaporan"
-        Me.btnLaporan.Size = New System.Drawing.Size(75, 23)
-        Me.btnLaporan.TabIndex = 0
-        '
-        'btnLogout
-        '
-        Me.btnLogout.Location = New System.Drawing.Point(0, 0)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(75, 23)
-        Me.btnLogout.TabIndex = 0
-        '
         'FormMenuAdmin
         '
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(930, 479)
+        Me.ClientSize = New System.Drawing.Size(930, 506)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
         Me.IsMdiContainer = True
@@ -187,19 +220,6 @@ Partial Class FormMenuAdmin
         Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
-    End Sub
-
-
-    ' Form Load untuk mengatur posisi header
-
-    Private Sub SetupButtons()
-        btnDashboard.Text = "Dashboard"
-        btnDashboard.Size = New Size(230, 40)
-        btnDashboard.Location = New Point(10, 100)
-        btnDashboard.BackColor = Color.FromArgb(52, 73, 94)
-        btnDashboard.FlatStyle = FlatStyle.Flat
-        btnDashboard.ForeColor = Color.White
-        Panel1.Controls.Add(btnDashboard)
     End Sub
 
     ' Event klik tombol Logout

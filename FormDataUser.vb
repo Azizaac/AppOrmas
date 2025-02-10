@@ -57,23 +57,52 @@ Public Class FormDataUser
     End Sub
 
     Private Sub btnHapus_Click(sender As Object, e As EventArgs) Handles btnHapus.Click
-        If lblID.Text = "" Then
-            MsgBox("Pilih data yang akan dihapus!")
+        ' Cek apakah ID dipilih
+        If String.IsNullOrEmpty(lblID.Text) Then
+            MsgBox("Pilih data yang akan dihapus!", vbExclamation)
             Exit Sub
         End If
 
+        ' Validasi ID harus angka
+        Dim idUser As Integer
+        If Not Integer.TryParse(lblID.Text, idUser) Then
+            MsgBox("ID tidak valid!", vbExclamation)
+            Exit Sub
+        End If
+
+        ' Konfirmasi sebelum menghapus
         If MsgBox("Yakin akan menghapus data ini?", vbQuestion + vbYesNo) = vbYes Then
             Try
-                Cmd = New SqlCommand("DELETE FROM [user] WHERE id_user=" & lblID.Text, Conn)
-                Cmd.ExecuteNonQuery()
-                MsgBox("Data berhasil dihapus")
+                ' Cek apakah id_user masih digunakan di tabel ormas
+                Dim cekQuery As String = "SELECT COUNT(*) FROM ormas WHERE id_user = @id"
+                Using cekCmd As New SqlCommand(cekQuery, Conn)
+                    cekCmd.Parameters.AddWithValue("@id", idUser)
+                    Dim jumlahTerkait As Integer = Convert.ToInt32(cekCmd.ExecuteScalar())
+
+                    ' Jika masih ada data terkait, tampilkan pesan error
+                    If jumlahTerkait > 0 Then
+                        MsgBox("Tidak bisa menghapus! Data masih digunakan di tabel ormas.", vbCritical)
+                        Exit Sub
+                    End If
+                End Using
+
+                ' Jika tidak ada data terkait, lanjut hapus
+                Dim deleteQuery As String = "DELETE FROM [user] WHERE id_user = @id"
+                Using cmd As New SqlCommand(deleteQuery, Conn)
+                    cmd.Parameters.AddWithValue("@id", idUser)
+                    cmd.ExecuteNonQuery()
+                End Using
+
+                MsgBox("Data berhasil dihapus!", vbInformation)
                 LoadData()
                 Clear()
-            Catch ex As Exception
-                MsgBox("Terjadi kesalahan: " & ex.Message)
+            Catch ex As SqlException
+                MsgBox("Terjadi kesalahan saat menghapus data: " & ex.Message, vbCritical)
             End Try
         End If
     End Sub
+
+
 
     Private Sub Clear()
         lblID.Text = ""

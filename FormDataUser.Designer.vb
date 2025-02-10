@@ -48,7 +48,7 @@ Partial Class FormDataUser
         Me.DGVUser.ColumnHeadersHeight = 29
         Me.DGVUser.Location = New System.Drawing.Point(47, 217)
         Me.DGVUser.Name = "DGVUser"
-        Me.DGVUser.RowHeadersWidth = 51
+        Me.DGVUser.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.DGVUser.Size = New System.Drawing.Size(579, 227)
         Me.DGVUser.TabIndex = 7
         '
@@ -103,17 +103,19 @@ Partial Class FormDataUser
         '
         'btnSimpan
         '
-        Me.btnSimpan.Location = New System.Drawing.Point(0, 0)
+        Me.btnSimpan.Location = New System.Drawing.Point(206, 188)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(75, 23)
         Me.btnSimpan.TabIndex = 15
+        Me.btnSimpan.Text = "Simpan"
         '
         'btnHapus
         '
-        Me.btnHapus.Location = New System.Drawing.Point(0, 0)
+        Me.btnHapus.Location = New System.Drawing.Point(348, 188)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(75, 23)
         Me.btnHapus.TabIndex = 16
+        Me.btnHapus.Text = "Hapus"
         '
         'lblID
         '

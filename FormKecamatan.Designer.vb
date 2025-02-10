@@ -22,29 +22,34 @@ Partial Class FormKecamatan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DGVKecamatan = New System.Windows.Forms.DataGridView()
         Me.txtNamaKecamatan = New System.Windows.Forms.TextBox()
         Me.btnSimpan = New System.Windows.Forms.Button()
         Me.btnHapus = New System.Windows.Forms.Button()
         Me.lblID = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.DB_OrmasDataSet = New AppOrmas.DB_OrmasDataSet()
+        Me.DBOrmasDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.DGVKecamatan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DB_OrmasDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DBOrmasDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DGVKecamatan
         '
         Me.DGVKecamatan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVKecamatan.Location = New System.Drawing.Point(40, 98)
-        Me.DGVKecamatan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DGVKecamatan.Location = New System.Drawing.Point(43, 98)
+        Me.DGVKecamatan.Margin = New System.Windows.Forms.Padding(4)
         Me.DGVKecamatan.Name = "DGVKecamatan"
-        Me.DGVKecamatan.RowHeadersWidth = 51
+        Me.DGVKecamatan.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.DGVKecamatan.Size = New System.Drawing.Size(533, 308)
         Me.DGVKecamatan.TabIndex = 0
         '
         'txtNamaKecamatan
         '
         Me.txtNamaKecamatan.Location = New System.Drawing.Point(200, 37)
-        Me.txtNamaKecamatan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNamaKecamatan.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNamaKecamatan.Name = "txtNamaKecamatan"
         Me.txtNamaKecamatan.Size = New System.Drawing.Size(265, 22)
         Me.txtNamaKecamatan.TabIndex = 1
@@ -52,7 +57,7 @@ Partial Class FormKecamatan
         'btnSimpan
         '
         Me.btnSimpan.Location = New System.Drawing.Point(493, 31)
-        Me.btnSimpan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSimpan.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(107, 37)
         Me.btnSimpan.TabIndex = 2
@@ -62,7 +67,7 @@ Partial Class FormKecamatan
         'btnHapus
         '
         Me.btnHapus.Location = New System.Drawing.Point(493, 414)
-        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnHapus.Margin = New System.Windows.Forms.Padding(4)
         Me.btnHapus.Name = "btnHapus"
         Me.btnHapus.Size = New System.Drawing.Size(107, 37)
         Me.btnHapus.TabIndex = 3
@@ -89,6 +94,16 @@ Partial Class FormKecamatan
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Nama Kecamatan:"
         '
+        'DB_OrmasDataSet
+        '
+        Me.DB_OrmasDataSet.DataSetName = "DB_OrmasDataSet"
+        Me.DB_OrmasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'DBOrmasDataSetBindingSource
+        '
+        Me.DBOrmasDataSetBindingSource.DataSource = Me.DB_OrmasDataSet
+        Me.DBOrmasDataSetBindingSource.Position = 0
+        '
         'FormKecamatan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -100,11 +115,13 @@ Partial Class FormKecamatan
         Me.Controls.Add(Me.btnSimpan)
         Me.Controls.Add(Me.txtNamaKecamatan)
         Me.Controls.Add(Me.DGVKecamatan)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FormKecamatan"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Data Kecamatan"
         CType(Me.DGVKecamatan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DB_OrmasDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DBOrmasDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -116,4 +133,6 @@ Partial Class FormKecamatan
     Friend WithEvents btnHapus As System.Windows.Forms.Button
     Friend WithEvents lblID As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents DBOrmasDataSetBindingSource As BindingSource
+    Friend WithEvents DB_OrmasDataSet As DB_OrmasDataSet
 End Class

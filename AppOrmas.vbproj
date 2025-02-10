@@ -73,6 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB_OrmasDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_OrmasDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormDashboardAdmin.Designer.vb">
       <DependentUpon>FormDashboardAdmin.vb</DependentUpon>
     </Compile>
@@ -166,6 +171,9 @@
     <EmbeddedResource Include="FormKelurahan.resx">
       <DependentUpon>FormKelurahan.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLaporan.resx">
+      <DependentUpon>FormLaporan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +194,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DB_OrmasDataSet.xsc">
+      <DependentUpon>DB_OrmasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DB_OrmasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_OrmasDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_OrmasDataSet.xss">
+      <DependentUpon>DB_OrmasDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
